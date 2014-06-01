@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		24DEEB7D193B7A42005D5796 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24DEEB7C193B7A42005D5796 /* Foundation.framework */; };
+		24DEEB7F193B7A42005D5796 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24DEEB7E193B7A42005D5796 /* CoreGraphics.framework */; };
+		24DEEB81193B7A42005D5796 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24DEEB80193B7A42005D5796 /* UIKit.framework */; };
+		24DEEB87193B7A42005D5796 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24DEEB85193B7A42005D5796 /* InfoPlist.strings */; };
+		24DEEB89193B7A42005D5796 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DEEB88193B7A42005D5796 /* main.m */; };
+		24DEEB8D193B7A42005D5796 /* CDRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DEEB8C193B7A42005D5796 /* CDRAppDelegate.m */; };
+		24DEEB90193B7A42005D5796 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24DEEB8E193B7A42005D5796 /* Main.storyboard */; };
+		24DEEB93193B7A42005D5796 /* CDRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DEEB92193B7A42005D5796 /* CDRViewController.m */; };
+		24DEEB95193B7A42005D5796 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24DEEB94193B7A42005D5796 /* Images.xcassets */; };
+		24DEEB9C193B7A42005D5796 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24DEEB9B193B7A42005D5796 /* XCTest.framework */; };
+		24DEEB9D193B7A42005D5796 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24DEEB7C193B7A42005D5796 /* Foundation.framework */; };
+		24DEEB9E193B7A42005D5796 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24DEEB80193B7A42005D5796 /* UIKit.framework */; };
+		24DEEBA6193B7A42005D5796 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24DEEBA4193B7A42005D5796 /* InfoPlist.strings */; };
+		24DEEBA8193B7A42005D5796 /* CDRTranslucentSideBarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DEEBA7193B7A42005D5796 /* CDRTranslucentSideBarTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		24DEEB9F193B7A42005D5796 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24DEEB71193B7A41005D5796 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24DEEB78193B7A42005D5796;
+			remoteInfo = CDRTranslucentSideBar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		24DEEB79193B7A42005D5796 /* CDRTranslucentSideBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CDRTranslucentSideBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		24DEEB7C193B7A42005D5796 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		24DEEB7E193B7A42005D5796 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		24DEEB80193B7A42005D5796 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		24DEEB84193B7A42005D5796 /* CDRTranslucentSideBar-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CDRTranslucentSideBar-Info.plist"; sourceTree = "<group>"; };
+		24DEEB86193B7A42005D5796 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		24DEEB88193B7A42005D5796 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		24DEEB8A193B7A42005D5796 /* CDRTranslucentSideBar-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CDRTranslucentSideBar-Prefix.pch"; sourceTree = "<group>"; };
+		24DEEB8B193B7A42005D5796 /* CDRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDRAppDelegate.h; sourceTree = "<group>"; };
+		24DEEB8C193B7A42005D5796 /* CDRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDRAppDelegate.m; sourceTree = "<group>"; };
+		24DEEB8F193B7A42005D5796 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		24DEEB91193B7A42005D5796 /* CDRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDRViewController.h; sourceTree = "<group>"; };
+		24DEEB92193B7A42005D5796 /* CDRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDRViewController.m; sourceTree = "<group>"; };
+		24DEEB94193B7A42005D5796 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		24DEEB9A193B7A42005D5796 /* CDRTranslucentSideBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CDRTranslucentSideBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		24DEEB9B193B7A42005D5796 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		24DEEBA3193B7A42005D5796 /* CDRTranslucentSideBarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CDRTranslucentSideBarTests-Info.plist"; sourceTree = "<group>"; };
+		24DEEBA5193B7A42005D5796 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		24DEEBA7193B7A42005D5796 /* CDRTranslucentSideBarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CDRTranslucentSideBarTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		24DEEB76193B7A42005D5796 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24DEEB7F193B7A42005D5796 /* CoreGraphics.framework in Frameworks */,
+				24DEEB81193B7A42005D5796 /* UIKit.framework in Frameworks */,
+				24DEEB7D193B7A42005D5796 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24DEEB97193B7A42005D5796 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24DEEB9C193B7A42005D5796 /* XCTest.framework in Frameworks */,
+				24DEEB9E193B7A42005D5796 /* UIKit.framework in Frameworks */,
+				24DEEB9D193B7A42005D5796 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		24DEEB70193B7A41005D5796 = {
+			isa = PBXGroup;
+			children = (
+				24DEEB82193B7A42005D5796 /* CDRTranslucentSideBar */,
+				24DEEBA1193B7A42005D5796 /* CDRTranslucentSideBarTests */,
+				24DEEB7B193B7A42005D5796 /* Frameworks */,
+				24DEEB7A193B7A42005D5796 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		24DEEB7A193B7A42005D5796 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24DEEB79193B7A42005D5796 /* CDRTranslucentSideBar.app */,
+				24DEEB9A193B7A42005D5796 /* CDRTranslucentSideBarTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		24DEEB7B193B7A42005D5796 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24DEEB7C193B7A42005D5796 /* Foundation.framework */,
+				24DEEB7E193B7A42005D5796 /* CoreGraphics.framework */,
+				24DEEB80193B7A42005D5796 /* UIKit.framework */,
+				24DEEB9B193B7A42005D5796 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		24DEEB82193B7A42005D5796 /* CDRTranslucentSideBar */ = {
+			isa = PBXGroup;
+			children = (
+				24DEEB8B193B7A42005D5796 /* CDRAppDelegate.h */,
+				24DEEB8C193B7A42005D5796 /* CDRAppDelegate.m */,
+				24DEEB8E193B7A42005D5796 /* Main.storyboard */,
+				24DEEB91193B7A42005D5796 /* CDRViewController.h */,
+				24DEEB92193B7A42005D5796 /* CDRViewController.m */,
+				24DEEB94193B7A42005D5796 /* Images.xcassets */,
+				24DEEB83193B7A42005D5796 /* Supporting Files */,
+			);
+			path = CDRTranslucentSideBar;
+			sourceTree = "<group>";
+		};
+		24DEEB83193B7A42005D5796 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				24DEEB84193B7A42005D5796 /* CDRTranslucentSideBar-Info.plist */,
+				24DEEB85193B7A42005D5796 /* InfoPlist.strings */,
+				24DEEB88193B7A42005D5796 /* main.m */,
+				24DEEB8A193B7A42005D5796 /* CDRTranslucentSideBar-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		24DEEBA1193B7A42005D5796 /* CDRTranslucentSideBarTests */ = {
+			isa = PBXGroup;
+			children = (
+				24DEEBA7193B7A42005D5796 /* CDRTranslucentSideBarTests.m */,
+				24DEEBA2193B7A42005D5796 /* Supporting Files */,
+			);
+			path = CDRTranslucentSideBarTests;
+			sourceTree = "<group>";
+		};
+		24DEEBA2193B7A42005D5796 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				24DEEBA3193B7A42005D5796 /* CDRTranslucentSideBarTests-Info.plist */,
+				24DEEBA4193B7A42005D5796 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		24DEEB78193B7A42005D5796 /* CDRTranslucentSideBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24DEEBAB193B7A42005D5796 /* Build configuration list for PBXNativeTarget "CDRTranslucentSideBar" */;
+			buildPhases = (
+				24DEEB75193B7A42005D5796 /* Sources */,
+				24DEEB76193B7A42005D5796 /* Frameworks */,
+				24DEEB77193B7A42005D5796 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CDRTranslucentSideBar;
+			productName = CDRTranslucentSideBar;
+			productReference = 24DEEB79193B7A42005D5796 /* CDRTranslucentSideBar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		24DEEB99193B7A42005D5796 /* CDRTranslucentSideBarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24DEEBAE193B7A42005D5796 /* Build configuration list for PBXNativeTarget "CDRTranslucentSideBarTests" */;
+			buildPhases = (
+				24DEEB96193B7A42005D5796 /* Sources */,
+				24DEEB97193B7A42005D5796 /* Frameworks */,
+				24DEEB98193B7A42005D5796 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				24DEEBA0193B7A42005D5796 /* PBXTargetDependency */,
+			);
+			name = CDRTranslucentSideBarTests;
+			productName = CDRTranslucentSideBarTests;
+			productReference = 24DEEB9A193B7A42005D5796 /* CDRTranslucentSideBarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		24DEEB71193B7A41005D5796 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CDR;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = nscallop;
+				TargetAttributes = {
+					24DEEB99193B7A42005D5796 = {
+						TestTargetID = 24DEEB78193B7A42005D5796;
+					};
+				};
+			};
+			buildConfigurationList = 24DEEB74193B7A41005D5796 /* Build configuration list for PBXProject "CDRTranslucentSideBar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 24DEEB70193B7A41005D5796;
+			productRefGroup = 24DEEB7A193B7A42005D5796 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				24DEEB78193B7A42005D5796 /* CDRTranslucentSideBar */,
+				24DEEB99193B7A42005D5796 /* CDRTranslucentSideBarTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		24DEEB77193B7A42005D5796 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24DEEB95193B7A42005D5796 /* Images.xcassets in Resources */,
+				24DEEB87193B7A42005D5796 /* InfoPlist.strings in Resources */,
+				24DEEB90193B7A42005D5796 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24DEEB98193B7A42005D5796 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24DEEBA6193B7A42005D5796 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		24DEEB75193B7A42005D5796 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24DEEB8D193B7A42005D5796 /* CDRAppDelegate.m in Sources */,
+				24DEEB89193B7A42005D5796 /* main.m in Sources */,
+				24DEEB93193B7A42005D5796 /* CDRViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24DEEB96193B7A42005D5796 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24DEEBA8193B7A42005D5796 /* CDRTranslucentSideBarTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		24DEEBA0193B7A42005D5796 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24DEEB78193B7A42005D5796 /* CDRTranslucentSideBar */;
+			targetProxy = 24DEEB9F193B7A42005D5796 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		24DEEB85193B7A42005D5796 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24DEEB86193B7A42005D5796 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		24DEEB8E193B7A42005D5796 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24DEEB8F193B7A42005D5796 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		24DEEBA4193B7A42005D5796 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24DEEBA5193B7A42005D5796 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		24DEEBA9193B7A42005D5796 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		24DEEBAA193B7A42005D5796 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		24DEEBAC193B7A42005D5796 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CDRTranslucentSideBar/CDRTranslucentSideBar-Prefix.pch";
+				INFOPLIST_FILE = "CDRTranslucentSideBar/CDRTranslucentSideBar-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		24DEEBAD193B7A42005D5796 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CDRTranslucentSideBar/CDRTranslucentSideBar-Prefix.pch";
+				INFOPLIST_FILE = "CDRTranslucentSideBar/CDRTranslucentSideBar-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		24DEEBAF193B7A42005D5796 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CDRTranslucentSideBar.app/CDRTranslucentSideBar";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CDRTranslucentSideBar/CDRTranslucentSideBar-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CDRTranslucentSideBarTests/CDRTranslucentSideBarTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		24DEEBB0193B7A42005D5796 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CDRTranslucentSideBar.app/CDRTranslucentSideBar";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CDRTranslucentSideBar/CDRTranslucentSideBar-Prefix.pch";
+				INFOPLIST_FILE = "CDRTranslucentSideBarTests/CDRTranslucentSideBarTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		24DEEB74193B7A41005D5796 /* Build configuration list for PBXProject "CDRTranslucentSideBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24DEEBA9193B7A42005D5796 /* Debug */,
+				24DEEBAA193B7A42005D5796 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24DEEBAB193B7A42005D5796 /* Build configuration list for PBXNativeTarget "CDRTranslucentSideBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24DEEBAC193B7A42005D5796 /* Debug */,
+				24DEEBAD193B7A42005D5796 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		24DEEBAE193B7A42005D5796 /* Build configuration list for PBXNativeTarget "CDRTranslucentSideBarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24DEEBAF193B7A42005D5796 /* Debug */,
+				24DEEBB0193B7A42005D5796 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 24DEEB71193B7A41005D5796 /* Project object */;
+}
