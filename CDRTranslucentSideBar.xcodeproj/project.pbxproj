@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24D92F6A194F37A8003EF820 /* CDRTranslucentSideBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D92F69194F37A8003EF820 /* CDRTranslucentSideBarViewController.m */; };
 		24DEEB7D193B7A42005D5796 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24DEEB7C193B7A42005D5796 /* Foundation.framework */; };
 		24DEEB7F193B7A42005D5796 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24DEEB7E193B7A42005D5796 /* CoreGraphics.framework */; };
 		24DEEB81193B7A42005D5796 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24DEEB80193B7A42005D5796 /* UIKit.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24D92F68194F37A8003EF820 /* CDRTranslucentSideBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDRTranslucentSideBarViewController.h; sourceTree = "<group>"; };
+		24D92F69194F37A8003EF820 /* CDRTranslucentSideBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDRTranslucentSideBarViewController.m; sourceTree = "<group>"; };
 		24DEEB79193B7A42005D5796 /* CDRTranslucentSideBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CDRTranslucentSideBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24DEEB7C193B7A42005D5796 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		24DEEB7E193B7A42005D5796 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -79,6 +82,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24D92F67194F374A003EF820 /* CDRTranslucentSideBar */ = {
+			isa = PBXGroup;
+			children = (
+				24D92F68194F37A8003EF820 /* CDRTranslucentSideBarViewController.h */,
+				24D92F69194F37A8003EF820 /* CDRTranslucentSideBarViewController.m */,
+			);
+			path = CDRTranslucentSideBar;
+			sourceTree = "<group>";
+		};
 		24DEEB70193B7A41005D5796 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +124,7 @@
 		24DEEB82193B7A42005D5796 /* CDRTranslucentSideBar */ = {
 			isa = PBXGroup;
 			children = (
+				24D92F67194F374A003EF820 /* CDRTranslucentSideBar */,
 				24DEEB8B193B7A42005D5796 /* CDRAppDelegate.h */,
 				24DEEB8C193B7A42005D5796 /* CDRAppDelegate.m */,
 				24DEEB8E193B7A42005D5796 /* Main.storyboard */,
@@ -251,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24DEEB8D193B7A42005D5796 /* CDRAppDelegate.m in Sources */,
+				24D92F6A194F37A8003EF820 /* CDRTranslucentSideBarViewController.m in Sources */,
 				24DEEB89193B7A42005D5796 /* main.m in Sources */,
 				24DEEB93193B7A42005D5796 /* CDRViewController.m in Sources */,
 			);
@@ -457,6 +471,7 @@
 				24DEEBAD193B7A42005D5796 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		24DEEBAE193B7A42005D5796 /* Build configuration list for PBXNativeTarget "CDRTranslucentSideBarTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +480,7 @@
 				24DEEBB0193B7A42005D5796 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
