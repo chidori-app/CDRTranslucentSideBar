@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CDRViewController : UIViewController
+- (IBAction)OnSideBarButtonTapped:(id)sender;
 
 @end

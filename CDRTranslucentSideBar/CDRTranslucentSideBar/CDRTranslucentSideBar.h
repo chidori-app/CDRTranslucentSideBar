@@ -23,12 +23,17 @@
 
 + (instancetype)sideBar;
 
-@property (nonatomic, assign) CGFloat sideBarWitdh;
-@property (nonatomic, strong, readonly) UITableView *tableView;
+@property (nonatomic, assign) CGFloat sideBarWidth;
+@property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, assign) CGFloat animationDuration;
-@property (nonatomic, strong) UIColor *tintColor;
-@property BOOL hasShown;
+@property (readonly) BOOL hasShown;
 @property BOOL showFromRight;
+
+@property BOOL translucent;
+@property CGFloat translucentAlpha;
+@property UIBarStyle translucentStyle;
+@property (nonatomic, strong) UIColor *translucentTintColor;
+
 
 @property (nonatomic, weak) id<CDRTranslucentSideBarDelegate> delegate;
 
@@ -46,10 +51,5 @@
 - (void)dismiss;
 - (void)dismissAnimated:(BOOL)animated;
 - (void)dismissAnimated:(BOOL)animated deltaX:(CGFloat)deltaXFromStartXToEndX;
-
-- (void)changeTableViewCellTextLabelColorAnimated:(BOOL)animated
-                                        tableView:(UITableView *)tableView
-                                previousIndexPath:(NSIndexPath *)previousIndexPath
-                                    nextIndexPath:(NSIndexPath *)nextIndexPath;
 
 @end

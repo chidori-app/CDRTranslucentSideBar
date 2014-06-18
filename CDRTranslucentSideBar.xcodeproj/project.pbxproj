@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2435927B1951E38400F93A0D /* ILTranslucentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2435927A1951E38400F93A0D /* ILTranslucentView.m */; };
+		2435927F1951EE3800F93A0D /* burger.png in Resources */ = {isa = PBXBuildFile; fileRef = 2435927D1951EE3800F93A0D /* burger.png */; };
+		243592801951EE3800F93A0D /* burger@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2435927E1951EE3800F93A0D /* burger@2x.png */; };
 		24D92F6A194F37A8003EF820 /* CDRTranslucentSideBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D92F69194F37A8003EF820 /* CDRTranslucentSideBar.m */; };
 		24DEEB7D193B7A42005D5796 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24DEEB7C193B7A42005D5796 /* Foundation.framework */; };
 		24DEEB7F193B7A42005D5796 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24DEEB7E193B7A42005D5796 /* CoreGraphics.framework */; };
@@ -35,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		243592791951E38400F93A0D /* ILTranslucentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILTranslucentView.h; sourceTree = "<group>"; };
+		2435927A1951E38400F93A0D /* ILTranslucentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILTranslucentView.m; sourceTree = "<group>"; };
+		2435927D1951EE3800F93A0D /* burger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = burger.png; sourceTree = "<group>"; };
+		2435927E1951EE3800F93A0D /* burger@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "burger@2x.png"; sourceTree = "<group>"; };
 		24D92F68194F37A8003EF820 /* CDRTranslucentSideBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDRTranslucentSideBar.h; sourceTree = "<group>"; };
 		24D92F69194F37A8003EF820 /* CDRTranslucentSideBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDRTranslucentSideBar.m; sourceTree = "<group>"; };
 		24DEEB79193B7A42005D5796 /* CDRTranslucentSideBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CDRTranslucentSideBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +89,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		243592781951E38400F93A0D /* ILTranslucentView */ = {
+			isa = PBXGroup;
+			children = (
+				243592791951E38400F93A0D /* ILTranslucentView.h */,
+				2435927A1951E38400F93A0D /* ILTranslucentView.m */,
+			);
+			path = ILTranslucentView;
+			sourceTree = "<group>";
+		};
+		2435927C1951EE3800F93A0D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2435927D1951EE3800F93A0D /* burger.png */,
+				2435927E1951EE3800F93A0D /* burger@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		24D92F67194F374A003EF820 /* CDRTranslucentSideBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +149,8 @@
 		24DEEB82193B7A42005D5796 /* CDRTranslucentSideBar */ = {
 			isa = PBXGroup;
 			children = (
+				2435927C1951EE3800F93A0D /* Resources */,
+				243592781951E38400F93A0D /* ILTranslucentView */,
 				24D92F67194F374A003EF820 /* CDRTranslucentSideBar */,
 				24DEEB8B193B7A42005D5796 /* CDRAppDelegate.h */,
 				24DEEB8C193B7A42005D5796 /* CDRAppDelegate.m */,
@@ -242,6 +269,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2435927F1951EE3800F93A0D /* burger.png in Resources */,
+				243592801951EE3800F93A0D /* burger@2x.png in Resources */,
 				24DEEB95193B7A42005D5796 /* Images.xcassets in Resources */,
 				24DEEB87193B7A42005D5796 /* InfoPlist.strings in Resources */,
 				24DEEB90193B7A42005D5796 /* Main.storyboard in Resources */,
@@ -265,6 +294,7 @@
 			files = (
 				24DEEB8D193B7A42005D5796 /* CDRAppDelegate.m in Sources */,
 				24D92F6A194F37A8003EF820 /* CDRTranslucentSideBar.m in Sources */,
+				2435927B1951E38400F93A0D /* ILTranslucentView.m in Sources */,
 				24DEEB89193B7A42005D5796 /* main.m in Sources */,
 				24DEEB93193B7A42005D5796 /* CDRViewController.m in Sources */,
 			);
