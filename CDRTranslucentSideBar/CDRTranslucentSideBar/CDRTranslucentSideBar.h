@@ -28,6 +28,7 @@
 @property (readonly) BOOL hasShown;
 @property (readonly) BOOL showFromRight;
 @property BOOL isCurrentPanGestureTarget;
+@property NSInteger tag;
 
 @property (nonatomic, weak) id<CDRTranslucentSideBarDelegate> delegate;
 

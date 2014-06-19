@@ -25,10 +25,13 @@
     self.sideBar = [[CDRTranslucentSideBar alloc] init];
     self.sideBar.sideBarWidth = 200;
     self.sideBar.delegate = self;
+    self.sideBar.tag = 0;
 
     // Create Right SideBar
     self.rightSideBar = [[CDRTranslucentSideBar alloc] initWithDirection:YES];
     self.rightSideBar.delegate = self;
+    self.rightSideBar.translucentStyle = UIBarStyleBlack;
+    self.rightSideBar.tag = 1;
 
     // Add PanGesture to Show SideBar by PanGesture
     UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
@@ -91,26 +94,49 @@
 #pragma mark - CDRTranslucentSideBarDelegate
 - (void)sideBar:(CDRTranslucentSideBar *)sideBar didAppear:(BOOL)animated
 {
-    NSLog(@"SideBar did appear");
+    if (sideBar.tag == 0) {
+        NSLog(@"Left SideBar did appear");
+    }
+
+    if (sideBar.tag == 1) {
+        NSLog(@"Right SideBar did appear");
+    }
 }
 
 - (void)sideBar:(CDRTranslucentSideBar *)sideBar willAppear:(BOOL)animated
 {
-    NSLog(@"SideBar will appear");
+    if (sideBar.tag == 0) {
+        NSLog(@"Left SideBar will appear");
+    }
+
+    if (sideBar.tag == 1) {
+        NSLog(@"Right SideBar will appear");
+    }
 }
 
 - (void)sideBar:(CDRTranslucentSideBar *)sideBar didDisappear:(BOOL)animated
 {
-    NSLog(@"SideBar did disappear");
+    if (sideBar.tag == 0) {
+        NSLog(@"Left SideBar did disappear");
+    }
+
+    if (sideBar.tag == 1) {
+        NSLog(@"Right SideBar did disappear");
+    }
 }
 
 - (void)sideBar:(CDRTranslucentSideBar *)sideBar willDisappear:(BOOL)animated
 {
-    NSLog(@"SideBar will disappear");
+    if (sideBar.tag == 0) {
+        NSLog(@"Left SideBar will disappear");
+    }
+
+    if (sideBar.tag == 1) {
+        NSLog(@"Right SideBar will disappear");
+    }
 }
 
-
-//This is just a sample for tableview menu
+// This is just a sample for tableview menu
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -172,7 +198,6 @@
     }
     return 0;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
