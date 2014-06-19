@@ -21,16 +21,16 @@
 
 @interface CDRTranslucentSideBar : UIViewController <UIGestureRecognizerDelegate>
 
-+ (instancetype)sideBar;
-
 @property (nonatomic, assign) CGFloat sideBarWidth;
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, assign) CGFloat animationDuration;
+@property (nonatomic) BOOL translucent;
 @property (nonatomic) UIBarStyle translucentStyle;
+@property (nonatomic) CGFloat translucentAlpha;
+@property (nonatomic, strong) UIColor *translucentTintColor;
 @property (readonly) BOOL hasShown;
 @property (readonly) BOOL showFromRight;
-
-
+@property BOOL isCurrentPanGestureTarget;
 
 @property (nonatomic, weak) id<CDRTranslucentSideBarDelegate> delegate;
 
@@ -49,6 +49,6 @@
 - (void)dismissAnimated:(BOOL)animated;
 - (void)dismissAnimated:(BOOL)animated deltaX:(CGFloat)deltaXFromStartXToEndX;
 
-- (void)handlePanGesture:(UIPanGestureRecognizer *) recognizer;
+- (void)handlePanGestureToShow:(UIPanGestureRecognizer *)recognizer inView:(UIView *)parentView;
 
 @end
