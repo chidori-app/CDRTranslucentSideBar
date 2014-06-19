@@ -3,7 +3,7 @@ CDRTranslucentSideBar
 
 CDRTranslucentSideBar is a useful sidebar menu library for iOS. You can craete beautiful blurred sidebar using CDRTranslucentSideBar.
 
-![CDRTranslucentSideBar1](https://raw.githubusercontent.com/chidori-app/CDRTranslucentSideBar/master/CDRTranslucentSideBar1.gif)
+![CDRTranslucentSideBar1](https://raw.githubusercontent.com/chidori-app/CDRTranslucentSideBar/master/CDRTranslucentSideBar1.gif)　　
 ![CDRTranslucentSideBar2](https://raw.githubusercontent.com/chidori-app/CDRTranslucentSideBar/master/CDRTranslucentSideBar2.gif)
 
 
