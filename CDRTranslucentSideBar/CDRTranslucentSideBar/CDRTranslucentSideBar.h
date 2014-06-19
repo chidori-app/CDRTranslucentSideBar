@@ -15,14 +15,11 @@
 - (void)sideBar:(CDRTranslucentSideBar *)sideBar willAppear:(BOOL)animated;
 - (void)sideBar:(CDRTranslucentSideBar *)sideBar didDisappear:(BOOL)animated;
 - (void)sideBar:(CDRTranslucentSideBar *)sideBar willDisappear:(BOOL)animated;
-- (void)sideBar:(CDRTranslucentSideBar *)sideBar didTapItemAtIndex:(NSIndexPath *)indexPath;
-- (void)sideBar:(CDRTranslucentSideBar *)sideBar didEnable:(BOOL)itemEnabled itemAtIndex:(NSIndexPath *)indexPath;
 @end
 
 @interface CDRTranslucentSideBar : UIViewController <UIGestureRecognizerDelegate>
 
 @property (nonatomic, assign) CGFloat sideBarWidth;
-@property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, assign) CGFloat animationDuration;
 @property (nonatomic) BOOL translucent;
 @property (nonatomic) UIBarStyle translucentStyle;
@@ -50,5 +47,7 @@
 - (void)dismissAnimated:(BOOL)animated deltaX:(CGFloat)deltaXFromStartXToEndX;
 
 - (void)handlePanGestureToShow:(UIPanGestureRecognizer *)recognizer inView:(UIView *)parentView;
+
+- (void)setContentViewInSideBar:(UIView *)contentView;
 
 @end

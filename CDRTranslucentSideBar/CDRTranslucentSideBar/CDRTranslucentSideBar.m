@@ -12,6 +12,7 @@
 
 @interface CDRTranslucentSideBar ()
 @property (nonatomic, strong) UIToolbar *translucentView;
+@property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, strong) UITapGestureRecognizer *tapGestureRecognizer;
 @property (nonatomic, strong) UIPanGestureRecognizer *panGestureRecognizer;
 @property CGPoint panStartPoint;
@@ -42,12 +43,11 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
 
-#pragma mark - Initializer
+#pragma mark - Custom Initializer
 - (void)initCDRTranslucentSideBar
 {
     _hasShown = NO;
@@ -57,7 +57,6 @@
     self.animationDuration = 0.25f;
 
     [self initTranslucentView];
-    [self initContentView];
 
     self.view.backgroundColor = [UIColor clearColor];
     self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
@@ -67,13 +66,6 @@
     self.panGestureRecognizer.minimumNumberOfTouches = 1;
     self.panGestureRecognizer.maximumNumberOfTouches = 1;
     [self.view addGestureRecognizer:self.panGestureRecognizer];
-}
-
-- (void)initContentView
-{
-    self.contentView = [[UIView alloc] init];
-    self.contentView.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:self.contentView];
 }
 
 - (void)initTranslucentView
@@ -94,13 +86,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)loadView
@@ -131,7 +121,10 @@
 - (void)layoutSubviews
 {
     CGFloat x = self.showFromRight ? self.parentViewController.view.bounds.size.width - self.sideBarWidth : 0;
-    self.contentView.frame = CGRectMake(x, 0, self.sideBarWidth, self.parentViewController.view.bounds.size.height);
+
+    if (self.contentView != nil) {
+        self.contentView.frame = CGRectMake(x, 0, self.sideBarWidth, self.parentViewController.view.bounds.size.height);
+    }
 }
 
 #pragma mark - Accessor
@@ -145,27 +138,33 @@
     return self.translucentView.barStyle;
 }
 
--(void)setTranslucent:(BOOL)translucent{
+- (void)setTranslucent:(BOOL)translucent
+{
     self.translucentView.translucent = translucent;
 }
 
--(BOOL)translucent{
+- (BOOL)translucent
+{
     return self.translucentView.translucent;
 }
 
--(void)setTranslucentAlpha:(CGFloat)translucentAlpha{
+- (void)setTranslucentAlpha:(CGFloat)translucentAlpha
+{
     self.translucentView.alpha = translucentAlpha;
 }
 
--(CGFloat)translucentAlpha{
+- (CGFloat)translucentAlpha
+{
     return self.translucentView.alpha;
 }
 
--(void)setTranslucentTintColor:(UIColor *)translucentTintColor{
+- (void)setTranslucentTintColor:(UIColor *)translucentTintColor
+{
     self.translucentView.tintColor = translucentTintColor;
 }
 
--(UIColor *)translucentTintColor{
+- (UIColor *)translucentTintColor
+{
     return self.translucentView.tintColor;
 }
 
@@ -175,7 +174,7 @@
     if ([self.delegate respondsToSelector:@selector(sideBar:willAppear:)]) {
         [self.delegate sideBar:self willAppear:animated];
     }
-    
+
     [self addToParentViewController:controller callingAppearanceMethods:YES];
     self.view.frame = controller.view.bounds;
 
@@ -184,12 +183,15 @@
     sideBarFrame.origin.x = self.showFromRight ? parentWidth : -self.sideBarWidth;
     sideBarFrame.size.width = self.sideBarWidth;
 
-    self.contentView.frame = sideBarFrame;
-
+    if (self.contentView != nil) {
+        self.contentView.frame = sideBarFrame;
+    }
     sideBarFrame.origin.x = self.showFromRight ? parentWidth - self.sideBarWidth : 0;
 
     void (^animations)() = ^{
-        self.contentView.frame = sideBarFrame;
+        if (self.contentView != nil) {
+            self.contentView.frame = sideBarFrame;
+        }
         self.translucentView.frame = sideBarFrame;
     };
     void (^completion)(BOOL) = ^(BOOL finished)
@@ -237,13 +239,16 @@
     CGRect sideBarFrame = self.view.bounds;
     sideBarFrame.origin.x = self.showFromRight ? parentWidth : -self.sideBarWidth;
     sideBarFrame.size.width = self.sideBarWidth;
-    self.contentView.frame = sideBarFrame;
+    if (self.contentView != nil) {
+        self.contentView.frame = sideBarFrame;
+    }
     self.translucentView.frame = sideBarFrame;
 }
 
 - (void)move:(CGFloat)deltaFromStartX
 {
-    CGRect sideBarFrame = self.contentView.frame;
+
+    CGRect sideBarFrame = self.translucentView.frame;
     CGFloat parentWidth = self.view.bounds.size.width;
 
     if (self.showFromRight) {
@@ -260,7 +265,9 @@
         sideBarFrame.origin.x = x;
     }
 
-    self.contentView.frame = sideBarFrame;
+    if (self.contentView != nil) {
+        self.contentView.frame = sideBarFrame;
+    }
     self.translucentView.frame = sideBarFrame;
 }
 
@@ -270,13 +277,16 @@
         [self.delegate sideBar:self willAppear:animated];
     }
 
-    CGRect sideBarFrame = self.contentView.frame;
+    CGRect sideBarFrame = self.translucentView.frame;
     CGFloat parentWidth = self.view.bounds.size.width;
 
     sideBarFrame.origin.x = self.showFromRight ? parentWidth - sideBarFrame.size.width : 0;
 
     void (^animations)() = ^{
-        self.contentView.frame = sideBarFrame;
+        if (self.contentView != nil) {
+            self.contentView.frame = sideBarFrame;
+        }
+
         self.translucentView.frame = sideBarFrame;
     };
     void (^completion)(BOOL) = ^(BOOL finished)
@@ -318,14 +328,16 @@
     };
 
     if (animated) {
+        CGRect sideBarFrame = self.translucentView.frame;
         CGFloat parentWidth = self.view.bounds.size.width;
-        CGRect sideBarFrame = self.contentView.frame;
         sideBarFrame.origin.x = self.showFromRight ? parentWidth : -self.sideBarWidth;
         [UIView animateWithDuration:self.animationDuration
                               delay:0
                             options:UIViewAnimationOptionBeginFromCurrentState
                          animations:^{
-                             self.contentView.frame = sideBarFrame;
+                             if (self.contentView != nil) {
+                                 self.contentView.frame = sideBarFrame;
+                             }
                              self.translucentView.frame = sideBarFrame;
                          }
                          completion:completion];
@@ -352,8 +364,8 @@
     };
 
     if (animated) {
+        CGRect sideBarFrame = self.translucentView.frame;
         CGFloat parentWidth = self.view.bounds.size.width;
-        CGRect sideBarFrame = self.contentView.frame;
         sideBarFrame.origin.x = self.showFromRight ? parentWidth : -self.sideBarWidth + deltaXFromStartXToEndX;
         sideBarFrame.size.width = 0;
 
@@ -361,7 +373,9 @@
                               delay:0
                             options:UIViewAnimationOptionBeginFromCurrentState
                          animations:^{
-                             self.contentView.frame = sideBarFrame;
+                             if (self.contentView != nil) {
+                                 self.contentView.frame = sideBarFrame;
+                             }
                              self.translucentView.frame = sideBarFrame;
                          }
                          completion:completion];
@@ -374,18 +388,17 @@
 - (void)handleTapGesture:(UITapGestureRecognizer *)recognizer
 {
     CGPoint location = [recognizer locationInView:self.view];
-    if (!CGRectContainsPoint(self.contentView.frame, location)) {
+    if (!CGRectContainsPoint(self.translucentView.frame, location)) {
         [self dismissAnimated:YES];
     }
 }
 
 - (void)handlePanGesture:(UIPanGestureRecognizer *)recognizer
 {
-    if(!self.isCurrentPanGestureTarget)
-    {
+    if (!self.isCurrentPanGestureTarget) {
         return;
     }
-    
+
     if (recognizer.state == UIGestureRecognizerStateBegan) {
         self.panStartPoint = [recognizer locationInView:self.view];
     }
@@ -420,10 +433,10 @@
 
 - (void)handlePanGestureToShow:(UIPanGestureRecognizer *)recognizer inView:(UIView *)parentView
 {
-    if(!self.isCurrentPanGestureTarget){
+    if (!self.isCurrentPanGestureTarget) {
         return;
     }
-    
+
     if (recognizer.state == UIGestureRecognizerStateBegan) {
         self.panStartPoint = [recognizer locationInView:parentView];
         [self startShow:self.panStartPoint.x];
@@ -463,6 +476,18 @@
         return NO;
     }
     return YES;
+}
+
+#pragma mark - ContentView
+- (void)setContentViewInSideBar:(UIView *)contentView
+{
+    if (self.contentView != nil) {
+        [self.contentView removeFromSuperview];
+    }
+
+    self.contentView = contentView;
+    self.contentView.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:self.contentView];
 }
 
 #pragma mark - Helper
