@@ -11,6 +11,7 @@
 
 @interface CDRViewController ()<CDRTranslucentSideBarDelegate>
 @property (nonatomic, strong) CDRTranslucentSideBar *sideBar;
+@property (nonatomic, strong) CDRTranslucentSideBar *rightSideBar;
 
 @end
 
@@ -22,13 +23,11 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     self.sideBar = [[CDRTranslucentSideBar alloc] init];
-    //self.sideBar.sideBarWidth = 300;
-    //self.sideBar.animationDuration = 1.0f;
-    self.sideBar.translucent = YES;
-    self.sideBar.translucentAlpha = 1.0;
-    self.sideBar.translucentStyle = UIBarStyleBlack;
-    self.sideBar.translucentTintColor = [UIColor clearColor];
+    self.sideBar.sideBarWidth = 300;
     self.sideBar.delegate = self;
+    
+    self.rightSideBar = [[CDRTranslucentSideBar alloc] initWithDirection:YES];
+    self.rightSideBar.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,4 +38,9 @@
 - (IBAction)OnSideBarButtonTapped:(id)sender {
     [self.sideBar show];
 }
+
+- (IBAction)OnRightSideBarButtonTapped:(id)sender {
+    [self.rightSideBar show];
+}
+
 @end

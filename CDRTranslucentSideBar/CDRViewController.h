@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CDRViewController : UIViewController
+@interface CDRViewController : UIViewController<UIGestureRecognizerDelegate>
+
 - (IBAction)OnSideBarButtonTapped:(id)sender;
+- (IBAction)OnRightSideBarButtonTapped:(id)sender;
 
 @end

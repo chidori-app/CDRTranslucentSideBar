@@ -7,10 +7,11 @@
 //
 
 #import "CDRTranslucentSideBar.h"
-#import "ILTranslucentView.h"
+
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
 @interface CDRTranslucentSideBar ()
-@property (nonatomic, strong) ILTranslucentView      *translucentView;
+@property (nonatomic, strong) UIToolbar *translucentView;
 @property (nonatomic, strong) UITapGestureRecognizer *tapGestureRecognizer;
 @property (nonatomic, strong) UIPanGestureRecognizer *panGestureRecognizer;
 @property CGPoint panStartPoint;
@@ -35,7 +36,7 @@ static CDRTranslucentSideBar *sideBar;
 -(instancetype)initWithDirection:(BOOL)showFromRight{
     self = [super init];
     if(self){
-        self.showFromRight = showFromRight;
+        _showFromRight = showFromRight;
         [self initCDRTranslucentSideBar];
     }
     return self;
@@ -54,11 +55,12 @@ static CDRTranslucentSideBar *sideBar;
 #pragma mark - Initializer
 -(void)initCDRTranslucentSideBar{
     _hasShown = false;
-    [self initTranslucentView];
-    [self initContentView];
-    
+
     self.sideBarWidth = 200;
     self.animationDuration = 0.25f;
+    
+    [self initTranslucentView];
+    [self initContentView];
     
     self.view.backgroundColor = [UIColor clearColor];
     self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
@@ -71,23 +73,22 @@ static CDRTranslucentSideBar *sideBar;
 
 }
 
--(void)initTranslucentView{
-    CGRect translucentFrame = CGRectMake(self.showFromRight ? self.view.bounds.size.width : - self.sideBarWidth, 0, self.sideBarWidth, self.view.bounds.size.height);
-    self.translucentView = [[ILTranslucentView alloc] initWithFrame:translucentFrame];
-    self.translucentView.contentMode = _showFromRight ? UIViewContentModeTopRight : UIViewContentModeTopLeft;
-    self.translucentView.clipsToBounds = YES;
-    self.translucentView.translucent = self.translucent;
-    self.translucentView.translucentAlpha = self.translucentAlpha;
-    self.translucentView.translucentTintColor = self.translucentTintColor;
-    self.translucentView.backgroundColor = [UIColor clearColor];
-    self.translucentView.translucentStyle = self.translucentStyle;
-    [self.view.layer insertSublayer:self.translucentView.layer atIndex:0];
-}
-
 -(void)initContentView{
     self.contentView = [[UIView alloc] init];
     self.contentView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.contentView];
+}
+
+-(void)initTranslucentView{
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        CGRect translucentFrame = CGRectMake(self.showFromRight ? self.view.bounds.size.width : - self.sideBarWidth, 0, self.sideBarWidth, self.view.bounds.size.height);
+        self.translucentView = [[UIToolbar alloc] initWithFrame:translucentFrame];
+        self.translucentView.frame = translucentFrame;
+        self.translucentView.contentMode = _showFromRight ? UIViewContentModeTopRight : UIViewContentModeTopLeft;
+        self.translucentView.clipsToBounds = YES;
+        self.translucentView.barStyle = UIBarStyleBlack;
+        [self.view.layer insertSublayer:self.translucentView.layer atIndex:0];
+    }
 }
 
 #pragma mark - View Life Cycle
@@ -133,6 +134,17 @@ static CDRTranslucentSideBar *sideBar;
     CGFloat x = self.showFromRight ? self.parentViewController.view.bounds.size.width - self.sideBarWidth : 0;
     self.contentView.frame = CGRectMake(x, 0, self.sideBarWidth, self.parentViewController.view.bounds.size.height);
 }
+
+#pragma mark - Accessor
+-(void)setTranslucentStyle:(UIBarStyle)translucentStyle{
+    self.translucentView.barStyle = translucentStyle;
+}
+
+-(UIBarStyle)translucentStyle{
+    return self.translucentView.barStyle;
+}
+
+
 
 #pragma mark - Show
 - (void)showInViewController:(UIViewController *)controller animated:(BOOL)animated
@@ -394,16 +406,16 @@ static CDRTranslucentSideBar *sideBar;
     }
 }
 
-- (void)handlePanGesture:(UIPanGestureRecognizer *) pan
+- (void)handlePanGesture:(UIPanGestureRecognizer *) recognizer
 {
-    if(pan.state == UIGestureRecognizerStateBegan)
+    if(recognizer.state == UIGestureRecognizerStateBegan)
     {
-        self.panStartPoint = [pan locationInView:self.view];
+        self.panStartPoint = [recognizer locationInView:self.view];
     }
     
-    if(pan.state == UIGestureRecognizerStateChanged)
+    if(recognizer.state == UIGestureRecognizerStateChanged)
     {
-        CGPoint currentPoint = [pan locationInView:self.view];
+        CGPoint currentPoint = [recognizer locationInView:self.view];
         if(!self.showFromRight)
         {
             [self move:self.sideBarWidth + currentPoint.x - self.panStartPoint.x];
@@ -414,9 +426,9 @@ static CDRTranslucentSideBar *sideBar;
         }
     }
     
-    if(pan.state == UIGestureRecognizerStateEnded)
+    if(recognizer.state == UIGestureRecognizerStateEnded)
     {
-        CGPoint endPoint = [pan locationInView:self.view];
+        CGPoint endPoint = [recognizer locationInView:self.view];
         
         if(!self.showFromRight)
         {
@@ -457,7 +469,6 @@ static CDRTranslucentSideBar *sideBar;
     }
     return true;
 }
-
 
 #pragma mark - TableView
 

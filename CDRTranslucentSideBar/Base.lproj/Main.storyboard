@@ -15,12 +15,22 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="P75-uh-IUH">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="44c-sE-MXk">
                         <barButtonItem key="leftBarButtonItem" image="burger.png" id="TuS-wM-TQy">
                             <connections>
                                 <action selector="OnSideBarButtonTapped:" destination="vXZ-lx-hvc" id="TSj-XP-cdI"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="burger.png" id="3ws-Yh-BGe">
+                            <connections>
+                                <action selector="OnRightSideBarButtonTapped:" destination="vXZ-lx-hvc" id="BQS-hH-lK9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -49,6 +59,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="background1.jpg" width="320" height="568"/>
         <image name="burger.png" width="24" height="17"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -26,13 +26,10 @@
 @property (nonatomic, assign) CGFloat sideBarWidth;
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, assign) CGFloat animationDuration;
+@property (nonatomic) UIBarStyle translucentStyle;
 @property (readonly) BOOL hasShown;
-@property BOOL showFromRight;
+@property (readonly) BOOL showFromRight;
 
-@property BOOL translucent;
-@property CGFloat translucentAlpha;
-@property UIBarStyle translucentStyle;
-@property (nonatomic, strong) UIColor *translucentTintColor;
 
 
 @property (nonatomic, weak) id<CDRTranslucentSideBarDelegate> delegate;
@@ -51,5 +48,7 @@
 - (void)dismiss;
 - (void)dismissAnimated:(BOOL)animated;
 - (void)dismissAnimated:(BOOL)animated deltaX:(CGFloat)deltaXFromStartXToEndX;
+
+- (void)handlePanGesture:(UIPanGestureRecognizer *) recognizer;
 
 @end
