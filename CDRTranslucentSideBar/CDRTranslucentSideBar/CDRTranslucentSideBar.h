@@ -32,8 +32,8 @@
 
 @property (nonatomic, weak) id<CDRTranslucentSideBarDelegate> delegate;
 
-- (instancetype)init;
-- (instancetype)initWithDirection:(BOOL)showFromRight;
+- (id)init;
+- (id)initWithDirection:(BOOL)showFromRight;
 
 - (void)show;
 - (void)showAnimated:(BOOL)animated;
