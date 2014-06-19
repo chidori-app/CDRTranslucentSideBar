@@ -38,6 +38,12 @@ Initialize the sidebar and set properties in viewDidLoad.
 self.sideBar = [[CDRTranslucentSideBar alloc] init];
 self.sideBar.delegate = self;
 self.sideBar.tag = 0;
+
+//Example of Right Sidebar
+self.rightSideBar = [[CDRTranslucentSideBar alloc] initWithDirection:YES];
+self.rightSideBar.delegate = self;
+self.rightSideBar.translucentStyle = UIBarStyleBlack;
+self.rightSideBar.tag = 1;
 ```
 
 ####sideBarWidth
@@ -63,12 +69,6 @@ tableView.delegate = self;
 // Set ContentView in SideBar
 [self.sideBar setContentViewInSideBar:tableView];
 
-//Example of Right Sidebar
-self.rightSideBar = [[CDRTranslucentSideBar alloc] initWithDirection:YES];
-self.rightSideBar.delegate = self;
-self.rightSideBar.translucentStyle = UIBarStyleBlack;
-self.rightSideBar.tag = 1;
-
 ``` 
 
 ###Set PanGestureRecognizer
@@ -88,31 +88,34 @@ Create the action to handle the gesture.
 - (void)handlePanGesture:(UIPanGestureRecognizer *)recognizer
 {
 
-// if you have left and right sidebar, you can control the pan gesture by start point.
+	// if you have left and right sidebar, you can control the pan gesture by start point.
+	if (recognizer.state == UIGestureRecognizerStateBegan) {
+	CGPoint startPoint = [recognizer locationInView:self.view];
 
-if (recognizer.state == UIGestureRecognizerStateBegan) {
-        CGPoint startPoint = [recognizer locationInView:self.view];
-
-	// Left SideBar
-	if (startPoint.x < self.view.bounds.size.width / 2.0) {
-		self.sideBar.isCurrentPanGestureTarget = YES;
+		// Left SideBar
+		if (startPoint.x < self.view.bounds.size.width / 2.0) {
+			self.sideBar.isCurrentPanGestureTarget = YES;
 		}
-	// Right SideBar
-	else {
-		self.rightSideBar.isCurrentPanGestureTarget = YES;
+		// Right SideBar
+		else {
+			self.rightSideBar.isCurrentPanGestureTarget = YES;
+		}
 	}
-}
 
-[self.sideBar handlePanGestureToShow:recognizer inView:self.view];
-[self.rightSideBar handlePanGestureToShow:recognizer inView:self.view];
+	[self.sideBar handlePanGestureToShow:recognizer inView:self.view];
+	[self.rightSideBar handlePanGestureToShow:recognizer inView:self.view];
 
-// if you have only one sidebar, do like following
+	// if you have only one sidebar, do like following
 
-// self.sideBar.isCurrentPanGestureTarget = YES;
-//[self.sideBar handlePanGestureToShow:recognizer inView:self.view];
+	// self.sideBar.isCurrentPanGestureTarget = YES;
+	//[self.sideBar handlePanGestureToShow:recognizer inView:self.view];
 }
 
 ```
+
+##Example
+See the sample project `CDRTranslucentSideBar.xcodeproj`.
+
 
 ##Credits
 CDRTranslucentSideBar was originally created by [Masamichi Ueta](http://www.uetamasamichi.com) in the development of [Chidori](http://chidori.nscallop.jp).
