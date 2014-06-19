@@ -3,6 +3,7 @@ CDRTranslucentSideBar
 
 CDRTranslucentSideBar is a useful sidebar menu library for iOS. You can craete beautiful blurred sidebar using CDRTranslucentSideBar.
 
+
 ##How To Get Started
 
 ###Manual Installation
@@ -112,6 +113,14 @@ Create the action to handle the gesture.
 }
 
 ```
+
+###Delegates
+CDRTranslucentSideBar has four delegate methods.
+
+- `- (void)sideBar:(CDRTranslucentSideBar *)sideBar didAppear:(BOOL)animated;`
+- `- (void)sideBar:(CDRTranslucentSideBar *)sideBar willAppear:(BOOL)animated;`
+- `- (void)sideBar:(CDRTranslucentSideBar *)sideBar didDisappear:(BOOL)animated;`
+- `- (void)sideBar:(CDRTranslucentSideBar *)sideBar willDisappear:(BOOL)animated;`
 
 ##Example
 See the sample project `CDRTranslucentSideBar.xcodeproj`.
