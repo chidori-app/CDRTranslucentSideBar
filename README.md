@@ -75,6 +75,20 @@ tableView.delegate = self;
 
 ``` 
 
+
+###Show Sidebar
+To show the sidebar using BarButtonItem, call show method.
+
+```objective-c
+- (IBAction)OnSideBarButtonTapped:(id)sender
+{
+    [self.sideBar show];
+}
+
+```
+
+
+
 ###Set PanGestureRecognizer
 CDRTranslucentSideBar can be shown by pan gesture.
 Create `UIPangestureRecognizer` and action to handle the gesture.
