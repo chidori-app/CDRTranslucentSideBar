@@ -39,13 +39,8 @@
 - (void)showAnimated:(BOOL)animated;
 - (void)showInViewController:(UIViewController *)controller animated:(BOOL)animated;
 
-- (void)startShow:(CGFloat)startX;
-- (void)move:(CGFloat)deltaFromStartX;
-- (void)showAnimatedFrom:(BOOL)animated deltaX:(CGFloat)deltaFromStartXToEndX;
-
 - (void)dismiss;
 - (void)dismissAnimated:(BOOL)animated;
-- (void)dismissAnimated:(BOOL)animated deltaX:(CGFloat)deltaXFromStartXToEndX;
 
 - (void)handlePanGestureToShow:(UIPanGestureRecognizer *)recognizer inView:(UIView *)parentView;
 
