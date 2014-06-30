@@ -197,6 +197,7 @@
     void (^completion)(BOOL) = ^(BOOL finished)
     {
         _hasShown = YES;
+        self.isCurrentPanGestureTarget = YES;
         if (finished && [self.delegate respondsToSelector:@selector(sideBar:didAppear:)]) {
             [self.delegate sideBar:self didAppear:animated];
         }
@@ -367,7 +368,6 @@
         CGRect sideBarFrame = self.translucentView.frame;
         CGFloat parentWidth = self.view.bounds.size.width;
         sideBarFrame.origin.x = self.showFromRight ? parentWidth : -self.sideBarWidth + deltaXFromStartXToEndX;
-        sideBarFrame.size.width = 0;
 
         [UIView animateWithDuration:self.animationDuration
                               delay:0
