@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.license      = "Apache License, Version 2.0"
   s.author             = { "maasaamiichii" => "masamichi1023@gmail.com" }
   s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/chidori-app/CDRTranslucentSideBar.git", :tag => "1.0.0" }
+  s.source       = { :git => "https://github.com/chidori-app/CDRTranslucentSideBar.git", :tag => s.version.to_s }
   s.source_files  = "CDRTranslucentSideBar/CDRTranslucentSideBar"
   s.requires_arc = true
 end
