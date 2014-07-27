@@ -15,7 +15,7 @@ CDRTranslucentSideBar is a useful sidebar menu library for iOS. You can craete b
 - Add CDRTranslucentSideBar.h and CDRTranslucentSideBar.m from CDRTranslucentSideBar folder to your project.
 
 ### Installation with CocoaPods
-- under construction.
+	pod 'CDRTranslucentSideBar'
 
 ##Requirements
 iOS7.0 or higher.
