@@ -20,7 +20,7 @@
 
 @implementation CDRTranslucentSideBar
 
-- (id)init
+- (instancetype)init
 {
     self = [super init];
     if (self) {
@@ -29,7 +29,7 @@
     return self;
 }
 
-- (id)initWithDirection:(BOOL)showFromRight
+- (instancetype)initWithDirectionFromRight:(BOOL)showFromRight
 {
     self = [super init];
     if (self) {
@@ -39,7 +39,7 @@
     return self;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -160,12 +160,12 @@
 
 - (void)setTranslucentTintColor:(UIColor *)translucentTintColor
 {
-    self.translucentView.tintColor = translucentTintColor;
+    self.translucentView.barTintColor = translucentTintColor;
 }
 
 - (UIColor *)translucentTintColor
 {
-    return self.translucentView.tintColor;
+    return self.translucentView.barTintColor;
 }
 
 #pragma mark - Show

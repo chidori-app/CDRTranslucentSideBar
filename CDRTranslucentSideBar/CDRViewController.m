@@ -28,7 +28,7 @@
     self.sideBar.tag = 0;
 
     // Create Right SideBar
-    self.rightSideBar = [[CDRTranslucentSideBar alloc] initWithDirection:YES];
+    self.rightSideBar = [[CDRTranslucentSideBar alloc] initWithDirectionFromRight:YES];
     self.rightSideBar.delegate = self;
     self.rightSideBar.translucentStyle = UIBarStyleBlack;
     self.rightSideBar.tag = 1;
