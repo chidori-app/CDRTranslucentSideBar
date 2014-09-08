@@ -30,7 +30,7 @@
 @property BOOL isCurrentPanGestureTarget;
 @property NSInteger tag;
 
-@property (nonatomic, weak) id<CDRTranslucentSideBarDelegate> delegate;
+@property (nonatomic, weak) id <CDRTranslucentSideBarDelegate> delegate;
 
 - (instancetype)init;
 - (instancetype)initWithDirectionFromRight:(BOOL)showFromRight;
