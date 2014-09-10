@@ -44,7 +44,7 @@ self.sideBar.delegate = self;
 self.sideBar.tag = 0;
 
 //Example of Right Sidebar
-self.rightSideBar = [[CDRTranslucentSideBar alloc] initWithDirection:YES];
+self.rightSideBar = [[CDRTranslucentSideBar alloc] initWithDirectionFromRight:YES];
 self.rightSideBar.delegate = self;
 self.rightSideBar.translucentStyle = UIBarStyleBlack;
 self.rightSideBar.tag = 1;
