@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CDRTranslucentSideBar"
-  s.version      = "1.0.1"
+  s.version      = "1.0.22"
   s.summary      = "CDRTranslucentSideBar is a useful blurred sidebar menu library for iOS."
   s.description  = <<-DESC
                    CDRTranslucentSideBar is a useful sidebar menu library for iOS. 
