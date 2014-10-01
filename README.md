@@ -142,6 +142,10 @@ CDRTranslucentSideBar has four delegate methods.
 ##Example
 See the sample project `CDRTranslucentSideBar.xcodeproj`.
 
+##FAQ
+###How to add the side bar under navigation bar?
+Please check this issue. [don't show navigation bar item of main screen in slide menu like this plese give suggition](https://github.com/chidori-app/CDRTranslucentSideBar/issues/5)
+
 
 ##Credits
 CDRTranslucentSideBar was originally created by [Masamichi Ueta](http://www.uetamasamichi.com) in the development of [Chidori](http://chidori.nscallop.jp).

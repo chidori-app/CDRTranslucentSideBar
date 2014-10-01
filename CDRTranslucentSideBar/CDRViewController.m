@@ -61,7 +61,7 @@
 }
 
 - (IBAction)OnRightSideBarButtonTapped:(id)sender {
-	[self.rightSideBar show];
+	[self.rightSideBar showInViewController:self];
 }
 
 #pragma mark - Gesture Handler
@@ -81,7 +81,7 @@
 	}
 
 	[self.sideBar handlePanGestureToShow:recognizer inView:self.view];
-	[self.rightSideBar handlePanGestureToShow:recognizer inView:self.view];
+	[self.rightSideBar handlePanGestureToShow:recognizer inViewController:self];
 
 	// if you have only one sidebar, do like following
 

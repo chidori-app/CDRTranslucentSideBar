@@ -191,6 +191,10 @@
 	}
 }
 
+-(void)showInViewController:(UIViewController *)controller {
+    [self showInViewController:controller animated:YES];
+}
+
 - (void)showAnimated:(BOOL)animated {
 	UIViewController *controller = [UIApplication sharedApplication].keyWindow.rootViewController;
 	while (controller.presentedViewController != nil) {
@@ -209,18 +213,22 @@
 	while (controller.presentedViewController != nil) {
 		controller = controller.presentedViewController;
 	}
-	[self addToParentViewController:controller callingAppearanceMethods:YES];
-	self.view.frame = controller.view.bounds;
+    [self startShowInViewController:controller startX:startX];
+}
 
-	CGFloat parentWidth = self.view.bounds.size.width;
-
-	CGRect sideBarFrame = self.view.bounds;
-	sideBarFrame.origin.x = self.showFromRight ? parentWidth : -self.sideBarWidth;
-	sideBarFrame.size.width = self.sideBarWidth;
-	if (self.contentView != nil) {
-		self.contentView.frame = sideBarFrame;
-	}
-	self.translucentView.frame = sideBarFrame;
+-(void)startShowInViewController:(UIViewController *)controller startX:(CGFloat)startX{
+    [self addToParentViewController:controller callingAppearanceMethods:YES];
+    self.view.frame = controller.view.bounds;
+    
+    CGFloat parentWidth = self.view.bounds.size.width;
+    
+    CGRect sideBarFrame = self.view.bounds;
+    sideBarFrame.origin.x = self.showFromRight ? parentWidth : -self.sideBarWidth;
+    sideBarFrame.size.width = self.sideBarWidth;
+    if (self.contentView != nil) {
+        self.contentView.frame = sideBarFrame;
+    }
+    self.translucentView.frame = sideBarFrame;
 }
 
 - (void)move:(CGFloat)deltaFromStartX {
@@ -410,18 +418,18 @@
 	}
 }
 
-- (void)handlePanGestureToShow:(UIPanGestureRecognizer *)recognizer inView:(UIView *)parentView {
+- (void)handlePanGestureToShow:(UIPanGestureRecognizer *)recognizer inView:(UIView *)view {
 	if (!self.isCurrentPanGestureTarget) {
 		return;
 	}
 
 	if (recognizer.state == UIGestureRecognizerStateBegan) {
-		self.panStartPoint = [recognizer locationInView:parentView];
+		self.panStartPoint = [recognizer locationInView:view];
 		[self startShow:self.panStartPoint.x];
 	}
 
 	if (recognizer.state == UIGestureRecognizerStateChanged) {
-		CGPoint currentPoint = [recognizer locationInView:parentView];
+		CGPoint currentPoint = [recognizer locationInView:view];
 		if (!self.showFromRight) {
 			[self move:currentPoint.x - self.panStartPoint.x];
 		}
@@ -431,7 +439,7 @@
 	}
 
 	if (recognizer.state == UIGestureRecognizerStateEnded) {
-		CGPoint endPoint = [recognizer locationInView:parentView];
+		CGPoint endPoint = [recognizer locationInView:view];
 
 		if (!self.showFromRight) {
 			if (endPoint.x - self.panStartPoint.x >= self.sideBarWidth / 3) {
@@ -450,6 +458,48 @@
 			}
 		}
 	}
+}
+
+-(void)handlePanGestureToShow:(UIPanGestureRecognizer *)recognizer inViewController:(UIViewController *)controller {
+    if (!self.isCurrentPanGestureTarget) {
+        return;
+    }
+    
+    if (recognizer.state == UIGestureRecognizerStateBegan) {
+        self.panStartPoint = [recognizer locationInView:controller.view];
+        [self startShowInViewController:controller startX:self.panStartPoint.x];
+    }
+    
+    if (recognizer.state == UIGestureRecognizerStateChanged) {
+        CGPoint currentPoint = [recognizer locationInView:controller.view];
+        if (!self.showFromRight) {
+            [self move:currentPoint.x - self.panStartPoint.x];
+        }
+        else {
+            [self move:self.panStartPoint.x - currentPoint.x];
+        }
+    }
+    
+    if (recognizer.state == UIGestureRecognizerStateEnded) {
+        CGPoint endPoint = [recognizer locationInView:controller.view];
+        
+        if (!self.showFromRight) {
+            if (endPoint.x - self.panStartPoint.x >= self.sideBarWidth / 3) {
+                [self showAnimatedFrom:YES deltaX:endPoint.x - self.panStartPoint.x];
+            }
+            else {
+                [self dismissAnimated:YES deltaX:endPoint.x - self.panStartPoint.x];
+            }
+        }
+        else {
+            if (self.panStartPoint.x - endPoint.x >= self.sideBarWidth / 3) {
+                [self showAnimatedFrom:YES deltaX:self.panStartPoint.x - endPoint.x];
+            }
+            else {
+                [self dismissAnimated:YES deltaX:self.panStartPoint.x - endPoint.x];
+            }
+        }
+    }
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {

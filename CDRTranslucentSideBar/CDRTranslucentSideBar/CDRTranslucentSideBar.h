@@ -37,12 +37,14 @@
 
 - (void)show;
 - (void)showAnimated:(BOOL)animated;
+- (void)showInViewController:(UIViewController *)controller;
 - (void)showInViewController:(UIViewController *)controller animated:(BOOL)animated;
 
 - (void)dismiss;
 - (void)dismissAnimated:(BOOL)animated;
 
-- (void)handlePanGestureToShow:(UIPanGestureRecognizer *)recognizer inView:(UIView *)parentView;
+- (void)handlePanGestureToShow:(UIPanGestureRecognizer *)recognizer inView:(UIView *)view;
+- (void)handlePanGestureToShow:(UIPanGestureRecognizer *)recognizer inViewController:(UIViewController *)controller;
 
 - (void)setContentViewInSideBar:(UIView *)contentView;
 
