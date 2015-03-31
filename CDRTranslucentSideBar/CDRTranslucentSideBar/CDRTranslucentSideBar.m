@@ -350,7 +350,7 @@
 	if (animated) {
 		CGRect sideBarFrame = self.translucentView.frame;
 		CGFloat parentWidth = self.view.bounds.size.width;
-		sideBarFrame.origin.x = self.showFromRight ? parentWidth : -self.sideBarWidth + deltaXFromStartXToEndX;
+		sideBarFrame.origin.x = self.showFromRight ? parentWidth : -self.sideBarWidth;
 
 		[UIView animateWithDuration:self.animationDuration
 		                      delay:0
