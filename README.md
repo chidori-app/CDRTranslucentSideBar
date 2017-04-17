@@ -7,9 +7,9 @@ CDRTranslucentSideBar is a useful sidebar menu library for iOS. You can craete b
 ![CDRTranslucentSideBar2](https://raw.githubusercontent.com/chidori-app/CDRTranslucentSideBar/master/CDRTranslucentSideBar2.gif)
 
 
-##How To Get Started
+## How To Get Started
 
-###Manual Installation
+### Manual Installation
 
 - Download source code.
 - Add CDRTranslucentSideBar.h and CDRTranslucentSideBar.m from CDRTranslucentSideBar folder to your project.
@@ -17,13 +17,13 @@ CDRTranslucentSideBar is a useful sidebar menu library for iOS. You can craete b
 ### Installation with CocoaPods
 	pod 'CDRTranslucentSideBar'
 
-##Requirements
+## Requirements
 iOS7.0 or higher.
 
 
-##Usage
+## Usage
 
-###Set up
+### Set up
 Import `CDRTranslucentSideBar.h` into ViewController and create property of sidebar.
 
 ```objective-c
@@ -36,7 +36,7 @@ Import `CDRTranslucentSideBar.h` into ViewController and create property of side
 @end
 ```
 
-###Initialize
+### Initialize
 Initialize the sidebar and set properties in viewDidLoad.
 ```objective-c
 self.sideBar = [[CDRTranslucentSideBar alloc] init];
@@ -50,17 +50,17 @@ self.rightSideBar.translucentStyle = UIBarStyleBlack;
 self.rightSideBar.tag = 1;
 ```
 
-####sideBarWidth
+#### sideBarWidth
 The sideBarWidth value. You can change the sidebar width by changing this value.
 
-####animationDuration
+#### animationDuration
 The animation duration value to show sidebar. This property specify the duration to show sidebar by action.
 
-####translucentStyle
+#### translucentStyle
 CDRTranslucentSideBar uses UIToolbar to provide blur effect. This property specifies its appearance.
 
 
-###Set Content of Sidebar
+### Set Content of Sidebar
 Set content of sidebar by `setContentViewInSideBar`.
 You can use subclass of UIView for contentView, like UITableView.
 
@@ -76,7 +76,7 @@ tableView.delegate = self;
 ``` 
 
 
-###Show Sidebar
+### Show Sidebar
 To show the sidebar using BarButtonItem, call show method.
 
 ```objective-c
@@ -89,7 +89,7 @@ To show the sidebar using BarButtonItem, call show method.
 
 
 
-###Set PanGestureRecognizer
+### Set PanGestureRecognizer
 CDRTranslucentSideBar can be shown by pan gesture.
 Create `UIPangestureRecognizer` and action to handle the gesture.
 
@@ -99,7 +99,7 @@ UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] i
 [self.view addGestureRecognizer:panGestureRecognizer];
 ```
 
-####PanGesture Handler
+#### PanGesture Handler
 Create the action to handle the gesture.
 
 ```objective-c
@@ -131,7 +131,7 @@ Create the action to handle the gesture.
 
 ```
 
-###Delegates
+### Delegates
 CDRTranslucentSideBar has four delegate methods.
 
 - `- (void)sideBar:(CDRTranslucentSideBar *)sideBar didAppear:(BOOL)animated;`
@@ -139,22 +139,22 @@ CDRTranslucentSideBar has four delegate methods.
 - `- (void)sideBar:(CDRTranslucentSideBar *)sideBar didDisappear:(BOOL)animated;`
 - `- (void)sideBar:(CDRTranslucentSideBar *)sideBar willDisappear:(BOOL)animated;`
 
-##Example
+## Example
 See the sample project `CDRTranslucentSideBar.xcodeproj`.
 
-##FAQ
-###How to add the side bar under navigation bar?
+## FAQ
+### How to add the side bar under navigation bar?
 Please check this issue. [don't show navigation bar item of main screen in slide menu like this plese give suggition](https://github.com/chidori-app/CDRTranslucentSideBar/issues/5)
 
 
-##Credits
+## Credits
 CDRTranslucentSideBar was originally created by [Masamichi Ueta](http://www.uetamasamichi.com) in the development of [Chidori](http://chidori.nscallop.jp).
 
 CDRTranslucentSideBar is used in [Chidori](http://chidori.nscallop.jp), iOS application.
 
-##Contact
+## Contact
 Ask nscallop on Twitter ([@nscallop](https://twitter.com/nscallop))
 
 
-##License
+## License
 CDRTranslucentSideBar is available under the apache 2.0 license. See the LICENSE file for more info.
